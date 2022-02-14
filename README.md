@@ -1,4 +1,4 @@
-# WebAP
+# WebAP - Angular Project which consumes an .NETCORE API that returns JSON Object Data & writes to data in SQL Database
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.14.
 
