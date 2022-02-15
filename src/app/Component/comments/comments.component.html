@@ -1,0 +1,34 @@
+<p>comments works!</p>
+
+<table class="table">
+    <thead>
+        <th style="padding-right: 15px;">postId</th>
+        <th style="padding-right: 15px;">Id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>body</th>
+    </thead>
+    <tbody *ngFor="let comment of comments">
+        <td style="padding-left: 15px;">{{comment.postId}}</td>
+        <td style="padding-right: 15px;">{{comment.id}}</td>
+        <td>{{comment.name}}</td>
+        <td>{{comment.email}}</td>
+        <td>{{comment.body}}</td>
+    </tbody>
+</table>
+
+
+
+<h2>Enter Comment Id</h2>
+<input (input)="commentIdSelected=$any($event.target).value">
+
+<button (click) = "showCommentIdDetails()">Show Comment Id::{{commentIdSelected}} Details</button> &nbsp;
+<br/>
+
+<div *ngIf="showCommentIdDetailsFlag">
+    <h1>id :: {{commentById.id}}</h1>
+    <h1>postId :: {{commentById.postId}}</h1>
+    <h1>name :: {{commentById.name}}</h1>   
+    <h1>email :: {{commentById.email}}</h1>    
+    <h1>body :: {{commentById.body}}</h1>     
+</div>

@@ -1,0 +1,67 @@
+<h2>Users Detail Component</h2>
+
+
+<h2>Enter Id</h2>
+<input (input)="userIdComponentInput=$any($event.target).value">
+<br/> 
+<button (click) = "showUserDetailFunction()">Show User Details</button> &nbsp;
+<br/>
+
+<div *ngIf="showUserDetailComp">
+<table  *ngFor="let user of userDetail"  class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Fields</th> <th>Data Value</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>User Id</th> <td>{{user.id}}</td> 
+    </tr>
+    <tr>
+            <th>name</th> <td>{{user.name}}</td>   
+    </tr>
+    <tr>
+        <th>username</th><td>{{user.username}}</td> 
+    </tr>
+    <tr>
+        <th>email</th>   <td>{{user.email}}</td>  
+    </tr>
+        <tr>
+        <th>street</th> <td>{{user.address.street}}</td> 
+    </tr>
+        <tr>
+        <th>suite</th> <td>{{user.address.suite}}</td> 
+    </tr>
+        <tr>
+        <th>city</th>  <td>{{user.address.city}}</td> 
+    </tr>
+        <tr>
+        <th>zipcode</th> <td>{{user.address.zipcode}}</td>  
+    </tr>
+        <tr>
+        <th>lat</th> <td>{{user.address.geo.lat}}</td>  
+    </tr>
+        <tr>
+        <th>long</th>  <td>{{user.address.geo.lng}}</td>  
+    </tr>
+        <tr>
+        <th>phone</th>  <td>{{user.phone}}</td>  
+    </tr>
+        <tr>
+        <th>website</th>  <td>{{user.website}}</td> 
+    </tr>
+        <tr>
+        <th>company name</th>   <td>{{user.company.name}}</td>  
+    </tr>
+        <tr>
+        <th>company catchPhrase</th> <td>{{user.company.catchPhrase}}</td> 
+    </tr>
+    <tr>
+        <th>company bs</th>  <td>{{user.company.bs}}</td> 
+    </tr>
+</tbody>
+    
+</table>
+
+</div>

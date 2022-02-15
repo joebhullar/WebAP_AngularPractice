@@ -1,0 +1,33 @@
+<p>albums works!</p>
+
+<table class="table">
+    <thead>
+        <tr> 
+            <th>id</th>
+            <th>userId</th>
+            <th>title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let album of albums">
+            <td>{{album.id}}</td>
+            <td>{{album.userId}}</td>
+            <td>{{album.title}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br/>
+
+
+<h2>Enter Id</h2>
+<input (input)="albumIdSelected=$any($event.target).value">
+
+<button (click) = "showAlbumIdDetails()">Show Album Id::{{albumIdSelected}} Details</button> &nbsp;
+<br/>
+
+<div *ngIf="showAlbumIdFlag">
+    <h1>id :: {{albumById.id}}</h1>
+    <h1>userId :: {{albumById.userId}}</h1>
+    <h1>title :: {{albumById.title}}</h1>    
+</div>
